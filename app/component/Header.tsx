@@ -44,10 +44,10 @@ export function Header(): ReactElement {
               <div className="flex-shrink-0 flex items-center">
                 <Link href="/">
                   <Image
-                    src="/logo-cg.webp" // Replace with your logo's file path
+                    src="/cg-logo.svg" // Replace with your logo's file path
                     alt="Logo"
-                    width={150}
-                    height={40}
+                    width={90}
+                    height={10}
                   />
                 </Link>
               </div>
@@ -83,10 +83,10 @@ export function Header(): ReactElement {
             <div className="flex-shrink-0 flex items-center">
               <Link href="/">
                 <Image
-                  src="/logo-cg.webp" // Replace with your logo's file path
+                  src="/cg-logo.svg" // Replace with your logo's file path
                   alt="Logo"
-                  width={150}
-                  height={40}
+                  width={90}
+                  height={10}
                 />
               </Link>
             </div>
