@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Search, BookOpen, Code, Database, Brain, Star, Users, Clock } from 'lucide-react'
+import { Search, Code, Database, Brain, Star, Users, Clock } from 'lucide-react'
 
 const courses = [
   {
@@ -43,7 +43,7 @@ const courses = [
   }
 ]
 
-export default function CoursesPage() {
+export default function Courses() {
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('all')
 

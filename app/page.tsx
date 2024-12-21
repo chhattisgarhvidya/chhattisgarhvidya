@@ -1,68 +1,65 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import CoursesPage from './courses/page'
+import Courses from './component/Courses';
+
 
 
 
 export default function Home() {
-  const [mounted, setMounted] = useState(false)
-  
-  // start
-  const [currentQuote, setCurrentQuote] = useState<string>(""); // Displayed text
-  const [isDeleting, setIsDeleting] = useState<boolean>(false); // Whether we're deleting
-  const [charIndex, setCharIndex] = useState<number>(0); // Index of the current character
-  const [quoteIndex, setQuoteIndex] = useState<number>(0); // Index of the current quote
-  const [typingSpeed, setTypingSpeed] = useState<number>(150); // Speed of typing or deleting
-  const quotes: string[] = [
-    "Empower Your Future Through Learning.",
-    "Unlock Knowledge, Unlock Opportunities.",
-    "Education is the Passport to the Future.",
-    "Learn Anytime, Anywhere with CG Vidya.",
+  const [mounted, setMounted] = useState(false);
+
+  // Typing animation state
+  const [currentQuote, setCurrentQuote] = useState<string>('');
+  const [isDeleting, setIsDeleting] = useState<boolean>(false);
+  const [charIndex, setCharIndex] = useState<number>(0);
+  const [quoteIndex, setQuoteIndex] = useState<number>(0);
+  const [typingSpeed, setTypingSpeed] = useState<number>(150);
+
+  const quotes = [
+    'Empower Your Future Through Learning.',
+    'Unlock Knowledge, Unlock Opportunities.',
+    'Education is the Passport to the Future.',
+    'Learn Anytime, Anywhere with CG Vidya.',
   ];
 
   useEffect(() => {
     const handleTyping = () => {
-      const currentFullQuote = quotes[quoteIndex]; // Get the current quote
-  
+      const currentFullQuote = quotes[quoteIndex];
+
       if (!isDeleting) {
-        // Typing phase: Add characters one by one
         setCurrentQuote(currentFullQuote.slice(0, charIndex + 1));
         setCharIndex((prev) => prev + 1);
-  
+
         if (charIndex + 1 === currentFullQuote.length) {
-          // Quote fully typed; pause before deleting
           setIsDeleting(true);
           setTypingSpeed(500); // Pause before deleting
         }
       } else {
-        // Deleting phase: Remove characters faster
         setCurrentQuote(currentFullQuote.slice(0, charIndex - 1));
         setCharIndex((prev) => prev - 1);
-  
+
         if (charIndex === 0) {
-          // Fully deleted; move to next quote
           setIsDeleting(false);
-          setQuoteIndex((prev) => (prev + 1) % quotes.length); // Cycle to next quote
-          setTypingSpeed(150); // Reset typing speed for the next quote
+          setQuoteIndex((prev) => (prev + 1) % quotes.length);
+          setTypingSpeed(150); // Reset speed for next quote
         }
       }
     };
-  
-    const typingTimeout = setTimeout(handleTyping, isDeleting ? 50 : typingSpeed); // Faster deleting speed
-  
-    return () => clearTimeout(typingTimeout); // Cleanup timeout
-  }, [charIndex, isDeleting, quoteIndex, typingSpeed, quotes]);
-  // end
+
+    const typingTimeout = setTimeout(handleTyping, isDeleting ? 50 : typingSpeed);
+    return () => clearTimeout(typingTimeout);
+  }, [charIndex, isDeleting, quoteIndex, typingSpeed]); // Dependency array now fixed and consistent
 
   useEffect(() => {
-    setMounted(true)
-  }, [])
+    setMounted(true);
+  }, []);
 
   if (!mounted) {
-    return null
+    return null;
   }
 
+  
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white">
   
@@ -77,9 +74,9 @@ export default function Home() {
         <div className="text-center">
           <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
             <span className="block">Transform Your Learning</span>
-            <span className="block text-blue-600 dark:text-blue-400">With CG Vidya</span>
+            <span className="block py-3 text-blue-600 dark:text-blue-400">With CG Vidya</span>
           </h1>
-          <p className="mt-3 max-w-md mx-auto text-lg text-gray-500 dark:text-gray-300 sm:text-xl md:mt-5 md:text-2xl md:max-w-3xl">
+          <p className="mt-3 max-w-md mx-auto md:text-lg text-gray-500 dark:text-gray-300 sm:text-xl md:mt-5 md:text-2xl md:max-w-3xl">
             <span>{currentQuote}</span>
             <span className="blinking-cursor">|</span>
           </p>
@@ -130,7 +127,7 @@ export default function Home() {
         </section> */}
 
 {/* coursepage */}
-    <CoursesPage/>
+    <Courses/>
         {/* Features Section */}
         <section id="features" className="py-20 bg-gray-50 dark:bg-gray-900 snap-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
