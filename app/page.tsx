@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { Header } from './component/Header'
 
 export default function Home() {
   const [mounted, setMounted] = useState(false)
@@ -16,8 +17,8 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white">
-  
-
+  {/* header */}
+  <Header />
       {/* Main Content */}
       <main>
         {/* Hero Section */}
