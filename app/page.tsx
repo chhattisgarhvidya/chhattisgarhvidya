@@ -1,13 +1,10 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { useTheme } from 'next-themes'
-import { Sun, Moon, Menu, X } from 'lucide-react'
-
+import { Header } from './component/Header'
 export default function Home() {
   const [mounted, setMounted] = useState(false)
-  const { theme, setTheme } = useTheme()
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  
 
   useEffect(() => {
     setMounted(true)
@@ -20,54 +17,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white">
       {/* Header */}
-      <header className="bg-white dark:bg-gray-800 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-16">
-            <div className="flex">
-              <div className="flex-shrink-0 flex items-center">
-                <span className="text-2xl font-bold text-blue-600 dark:text-blue-400">EduSite</span>
-              </div>
-            </div>
-            <div className="hidden sm:ml-6 sm:flex sm:items-center">
-              <nav className="space-x-4">
-                <a href="#features" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Features</a>
-                <a href="#testimonials" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Testimonials</a>
-                <a href="#cta" className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Get Started</a>
-              </nav>
-              <button
-                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                className="ml-4 p-2 rounded-md bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200"
-              >
-                {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-              </button>
-            </div>
-            <div className="sm:hidden flex items-center">
-              <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="p-2 rounded-md text-gray-700 dark:text-gray-300"
-              >
-                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-              </button>
-            </div>
-          </div>
-        </div>
-        {isMenuOpen && (
-          <div className="sm:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              <a href="#features" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Features</a>
-              <a href="#testimonials" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Testimonials</a>
-              <a href="#cta" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Get Started</a>
-              <button
-                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                className="mt-4 w-full flex items-center justify-center px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300"
-              >
-                {theme === 'dark' ? <Sun size={20} className="mr-2" /> : <Moon size={20} className="mr-2" />}
-                {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
-              </button>
-            </div>
-          </div>
-        )}
-      </header>
+      <Header/>
 
       {/* Main Content */}
       <main>
