@@ -1,4 +1,4 @@
-import { Sidebar } from '../component/Sidebar'
+import { CourseSidebar } from '../component/CourseSidebar'
 
 export default function CoursesLayout({
   children,
@@ -7,13 +7,14 @@ export default function CoursesLayout({
 }) {
   return (
     <div className="flex min-h-screen bg-white dark:bg-gray-900">
-      {/* Sidebar */}
-      <Sidebar />
+      <CourseSidebar />
       
-      {/* Main content */}
-      <main className="flex-1">
-        <div className="h-full w-full">
-          {children}
+      {/* Main content with proper margin for sidebar */}
+      <main className="ml-64 flex-1 px-4 py-8 md:px-8">
+        <div className="mx-auto max-w-4xl">
+          <div className="prose prose-lg dark:prose-invert">
+            {children}
+          </div>
         </div>
       </main>
     </div>

@@ -14,68 +14,71 @@
 
 This comprehensive track covers everything you need to know about web development, from basic HTML to advanced JavaScript concepts.
 
-## Course Modules
-
-### 1. HTML Fundamentals
-
-<div className="border rounded-lg p-6 mb-8 bg-white dark:bg-gray-800">
-  - Document structure
-  - HTML elements and attributes
-  - Forms and input elements
-  - Semantic HTML
-  - Best practices
-
-  <a href="/courses/web-development/html-fundamentals" className="text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center mt-4">
-    Start HTML Fundamentals →
-  </a>
-</div>
-
-### 2. CSS Essentials
-
-<div className="border rounded-lg p-6 mb-8 bg-white dark:bg-gray-800">
-  - Selectors and properties
-  - Box model
-  - Layout techniques
-  - Responsive design
-  - CSS frameworks
-
-  <a href="/courses/web-development/css-basics" className="text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center mt-4">
-    Start CSS Basics →
-  </a>
-</div>
-
-### 3. JavaScript Core
-
-<div className="border rounded-lg p-6 mb-8 bg-white dark:bg-gray-800">
-  - Basic syntax and data types
-  - Functions and scope
-  - DOM manipulation
-  - Events and event handling
-  - Modern ES6+ features
-
-  <a href="/courses/web-development/javascript-core" className="text-blue-600 dark:text-blue-400 hover:underline inline-flex items-center mt-4">
-    Start JavaScript Core →
-  </a>
-</div>
-
-## Prerequisites
-
-<div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 mb-8">
-  - Basic computer skills
-  - Text editor installed
-  - Web browser
-  - Enthusiasm to learn!
-</div>
-
 ## Learning Path
 
-```mermaid
-graph TB
-    A[Start Here] --> B[HTML Fundamentals]
-    B --> C[CSS Essentials]
-    C --> D[JavaScript Core]
-    D --> E[Frontend Frameworks]
-```
+<div className="grid gap-6 md:grid-cols-2 my-8">
+  {/* Getting Started Section */}
+  <div className="border rounded-lg p-6 bg-white dark:bg-gray-800">
+    <h3 className="text-xl font-semibold mb-4">1. Getting Started</h3>
+    <ul className="space-y-2">
+      <li>• Programming fundamentals</li>
+      <li>• Version control with GitHub</li>
+      <li>• Web accessibility</li>
+    </ul>
+    <a href="/courses/web-development/content/1-getting-started-lessons/1-intro-to-programming-languages" 
+       className="inline-flex items-center mt-4 text-blue-600 hover:text-blue-700 dark:text-blue-400">
+      Start Learning →
+    </a>
+  </div>
+
+  {/* JavaScript Basics */}
+  <div className="border rounded-lg p-6 bg-white dark:bg-gray-800">
+    <h3 className="text-xl font-semibold mb-4">2. JavaScript Basics</h3>
+    <ul className="space-y-2">
+      <li>• Data types and variables</li>
+      <li>• Functions and methods</li>
+      <li>• Control flow</li>
+      <li>• Arrays and loops</li>
+    </ul>
+    <a href="/courses/web-development/content/2-js-basics/1-data-types" 
+       className="inline-flex items-center mt-4 text-blue-600 hover:text-blue-700 dark:text-blue-400">
+      Start Learning →
+    </a>
+  </div>
+
+  {/* Projects Section */}
+  <div className="border rounded-lg p-6 bg-white dark:bg-gray-800 md:col-span-2">
+    <h3 className="text-xl font-semibold mb-4">Hands-on Projects</h3>
+    <div className="grid gap-4 md:grid-cols-3">
+      <div className="p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
+        <h4 className="font-medium mb-2">Terrarium</h4>
+        <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">Build an interactive terrarium website</p>
+        <a href="/courses/web-development/content/3-terrarium/1-intro-to-html" 
+           className="text-sm text-blue-600 dark:text-blue-400">
+          Start Project →
+        </a>
+      </div>
+      
+      <div className="p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
+        <h4 className="font-medium mb-2">Typing Game</h4>
+        <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">Create a browser-based typing game</p>
+        <a href="/courses/web-development/content/4-typing-game/typing-game" 
+           className="text-sm text-blue-600 dark:text-blue-400">
+          Start Project →
+        </a>
+      </div>
+
+      <div className="p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
+        <h4 className="font-medium mb-2">Space Game</h4>
+        <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">Build a space shooter game</p>
+        <a href="/courses/web-development/content/6-space-game/1-introduction" 
+           className="text-sm text-blue-600 dark:text-blue-400">
+          Start Project →
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 
 ## Course Features
 
@@ -94,18 +97,19 @@ graph TB
   </div>
 </div>
 
-## Time Commitment
+## Prerequisites
 
 <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-6 mb-8">
-  - Each module: 2-3 hours
-  - Complete track: 2-3 weeks
-  - Self-paced learning
+- Basic computer skills
+- Text editor installed
+- Web browser
+- Enthusiasm to learn!
 </div>
 
 <div className="text-center mt-12">
   <a 
-    href="/courses/web-development/html-fundamentals" 
-    className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 inline-flex items-center"
+    href="/courses/web-development/content/1-getting-started-lessons/1-intro-to-programming-languages" 
+    className="inline-flex items-center justify-center rounded-lg bg-blue-600 px-6 py-3 text-lg font-medium text-white transition-colors hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
   >
     Begin Your Journey →
   </a>
