@@ -1,4 +1,3 @@
-import createMDX from '@next/mdx'
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -38,12 +37,5 @@ const nextConfig = {
   }
 }
 
-const withMDX = createMDX({
-  options: {
-    remarkPlugins: [],  // Remove the array wrapper
-    rehypePlugins: [],  // Remove the array wrapper
-  },
-})
 
-// Merge MDX config with Next.js config
-export default withMDX(nextConfig)
+
