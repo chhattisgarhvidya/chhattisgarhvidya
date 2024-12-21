@@ -102,38 +102,10 @@ export default function Home() {
         </div>
       </div>
     </section>
-{/*     
-        <section className="bg-white h-screen flex items-center dark:bg-gray-800 py-20 snap-center">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
-                <span className="block">Transform Your Learning</span>
-                <span className="block text-blue-600 dark:text-blue-400">With CG Vidya</span>
-              </h1>
-              
-              <div className="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
-                <div className="rounded-md shadow">
-                  <a href="#courses" className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-10">
-                    Get started
-                  </a>
-                </div>
-                <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
-                  <a href="#" className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-gray-50 dark:bg-gray-700 dark:text-blue-400 dark:hover:bg-gray-600 md:py-4 md:text-lg md:px-10">
-                    Learn more
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section> */}
-
-{/* coursepage */}
     <Courses/>
 
-    {/* Student sections */}
 
     <Students/>
-        {/* Features Section */}
         <section id="features" className="py-20 bg-gray-50 dark:bg-gray-900 snap-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
