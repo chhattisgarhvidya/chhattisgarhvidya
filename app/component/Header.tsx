@@ -12,7 +12,8 @@ interface NavLink {
 }
 
 const navLinks: NavLink[] = [
-    {href:'/courses',label:'Courses'},
+    {href:'#courses',label:'Courses'},
+    {href:'#student',label:'Students  '}
 ]
 
 export function Header(): ReactElement {
@@ -45,8 +46,10 @@ export function Header(): ReactElement {
 
                   CgVidya
                 </Link>
+                
               </div>
             </div>
+            
             <div className="hidden sm:ml-6 sm:flex sm:items-center">
               <nav className="space-x-4">
                 {navLinks.map((link) => (
@@ -58,6 +61,7 @@ export function Header(): ReactElement {
                     {link.label}
                   </Link>
                 ))}
+                
               </nav>
               <div className="ml-4 w-10 h-10" />
             </div>
@@ -80,9 +84,20 @@ export function Header(): ReactElement {
               <Link href="/" className="text-2xl font-bold text-blue-600 dark:text-blue-400">
                 CgVidya
               </Link>
+              
             </div>
+           
           </div>
+          <div className='flex'>
+          <button
+              onClick={toggleTheme}
+              className="ml-4 md:hidden p-2 rounded-md  text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+              aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+            >
+              {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+            </button>
           <div className="hidden sm:ml-6 sm:flex sm:items-center">
+          
             <nav className="space-x-4">
               {navLinks.map((link) => (
                 <Link
@@ -113,7 +128,7 @@ export function Header(): ReactElement {
             </button>
           </div>
         </div>
-      </div>
+      </div></div>
       {isMenuOpen && (
         <div className="sm:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1">
@@ -129,7 +144,7 @@ export function Header(): ReactElement {
             ))}
             <button
               onClick={toggleTheme}
-              className="mt-4 w-full flex items-center justify-center px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+              className="mt-4 max-sm:hidden w-full flex items-center justify-center px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
             >
               {theme === 'dark' ? <Sun size={20} className="mr-2" /> : <Moon size={20} className="mr-2" />}
               {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
