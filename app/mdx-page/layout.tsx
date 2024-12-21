@@ -1,4 +1,4 @@
-import { MDXNav } from '../component/MDXNav'
+import { MDXNav } from '../component/MDX/MDXNav'
 
 export default function MDXLayout({
   children,
