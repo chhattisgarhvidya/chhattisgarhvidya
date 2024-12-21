@@ -23,6 +23,22 @@ body {
   );
 }
 
+.blinking-cursor {
+  display: inline-block;
+  width: 1ch;
+  animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+  from, to {
+    background-color: transparent;
+  }
+  50% {
+    background-color: currentColor;
+  }
+}
+
+
 /* Smooth transitions */
 .transition-theme {
   @apply transition-colors duration-200;

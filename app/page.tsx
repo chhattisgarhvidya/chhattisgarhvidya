@@ -8,6 +8,52 @@ import CoursesPage from './courses/page'
 export default function Home() {
   const [mounted, setMounted] = useState(false)
   
+  // start
+  const [currentQuote, setCurrentQuote] = useState<string>(""); // Displayed text
+  const [isDeleting, setIsDeleting] = useState<boolean>(false); // Whether we're deleting
+  const [charIndex, setCharIndex] = useState<number>(0); // Index of the current character
+  const [quoteIndex, setQuoteIndex] = useState<number>(0); // Index of the current quote
+  const [typingSpeed, setTypingSpeed] = useState<number>(150); // Speed of typing or deleting
+  const quotes: string[] = [
+    "Empower Your Future Through Learning.",
+    "Unlock Knowledge, Unlock Opportunities.",
+    "Education is the Passport to the Future.",
+    "Learn Anytime, Anywhere with CG Vidya.",
+  ];
+
+  useEffect(() => {
+    const handleTyping = () => {
+      const currentFullQuote = quotes[quoteIndex]; // Get the current quote
+  
+      if (!isDeleting) {
+        // Typing phase: Add characters one by one
+        setCurrentQuote(currentFullQuote.slice(0, charIndex + 1));
+        setCharIndex((prev) => prev + 1);
+  
+        if (charIndex + 1 === currentFullQuote.length) {
+          // Quote fully typed; pause before deleting
+          setIsDeleting(true);
+          setTypingSpeed(500); // Pause before deleting
+        }
+      } else {
+        // Deleting phase: Remove characters faster
+        setCurrentQuote(currentFullQuote.slice(0, charIndex - 1));
+        setCharIndex((prev) => prev - 1);
+  
+        if (charIndex === 0) {
+          // Fully deleted; move to next quote
+          setIsDeleting(false);
+          setQuoteIndex((prev) => (prev + 1) % quotes.length); // Cycle to next quote
+          setTypingSpeed(150); // Reset typing speed for the next quote
+        }
+      }
+    };
+  
+    const typingTimeout = setTimeout(handleTyping, isDeleting ? 50 : typingSpeed); // Faster deleting speed
+  
+    return () => clearTimeout(typingTimeout); // Cleanup timeout
+  }, [charIndex, isDeleting, quoteIndex, typingSpeed, quotes]);
+  // end
 
   useEffect(() => {
     setMounted(true)
@@ -24,6 +70,41 @@ export default function Home() {
       <div className='snap-y'>
       <main >
         {/* Hero Section */}
+
+
+        <section className="bg-white h-screen flex items-center dark:bg-gray-800 py-20 snap-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center">
+          <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
+            <span className="block">Transform Your Learning</span>
+            <span className="block text-blue-600 dark:text-blue-400">With CG Vidya</span>
+          </h1>
+          <p className="mt-3 max-w-md mx-auto text-lg text-gray-500 dark:text-gray-300 sm:text-xl md:mt-5 md:text-2xl md:max-w-3xl">
+            <span>{currentQuote}</span>
+            <span className="blinking-cursor">|</span>
+          </p>
+          <div className="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
+            <div className="rounded-md shadow">
+              <a
+                href="#courses"
+                className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-10"
+              >
+                Get started
+              </a>
+            </div>
+            <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
+              <a
+                href="#"
+                className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-600 bg-white hover:bg-gray-50 dark:bg-gray-700 dark:text-blue-400 dark:hover:bg-gray-600 md:py-4 md:text-lg md:px-10"
+              >
+                Learn more
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
         <section className="bg-white h-screen flex items-center dark:bg-gray-800 py-20 snap-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
