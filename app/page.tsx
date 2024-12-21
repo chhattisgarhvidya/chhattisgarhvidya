@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Courses from './component/Courses';
+import Students from './component/Students';
 
 
 
@@ -59,7 +60,7 @@ export default function Home() {
     return null;
   }
 
-  
+
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white">
   
@@ -128,6 +129,10 @@ export default function Home() {
 
 {/* coursepage */}
     <Courses/>
+
+    {/* Student sections */}
+
+    <Students/>
         {/* Features Section */}
         <section id="features" className="py-20 bg-gray-50 dark:bg-gray-900 snap-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
