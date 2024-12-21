@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { useTheme } from 'next-themes'
 import { Moon, Sun, Menu, X } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 import type { ReactElement } from 'react'
 
 interface NavLink {
@@ -41,9 +42,13 @@ export function Header(): ReactElement {
           <div className="flex justify-between h-16">
             <div className="flex">
               <div className="flex-shrink-0 flex items-center">
-                <Link href="/" className="text-2xl font-bold text-blue-600 dark:text-blue-400">
-
-                  CgVidya
+                <Link href="/">
+                  <Image
+                    src="/logo-cg.webp" // Replace with your logo's file path
+                    alt="Logo"
+                    width={150}
+                    height={40}
+                  />
                 </Link>
               </div>
             </div>
@@ -74,11 +79,15 @@ export function Header(): ReactElement {
     <header className="bg-white dark:bg-gray-800 shadow-sm z-10 fixed w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
-            
           <div className="flex">
             <div className="flex-shrink-0 flex items-center">
-              <Link href="/" className="text-2xl font-bold text-blue-600 dark:text-blue-400">
-                CgVidya
+              <Link href="/">
+                <Image
+                  src="/logo-cg.webp" // Replace with your logo's file path
+                  alt="Logo"
+                  width={150}
+                  height={40}
+                />
               </Link>
             </div>
           </div>
