@@ -20,14 +20,15 @@ export default function Home() {
   {/* header */}
   <Header />
       {/* Main Content */}
-      <main>
+      <div className='snap-y'>
+      <main >
         {/* Hero Section */}
-        <section className="bg-white dark:bg-gray-800 py-20">
+        <section className="bg-white dark:bg-gray-800 py-20 snap-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
                 <span className="block">Transform Your Learning</span>
-                <span className="block text-blue-600 dark:text-blue-400">With EduSite</span>
+                <span className="block text-blue-600 dark:text-blue-400">With CG Vidya</span>
               </h1>
               <p className="mt-3 max-w-md mx-auto text-base text-gray-500 dark:text-gray-300 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
                 Unlock your potential with our cutting-edge online learning platform. Anytime, anywhere access to world-class education.
@@ -49,14 +50,14 @@ export default function Home() {
         </section>
 
         {/* Features Section */}
-        <section id="features" className="py-20 bg-gray-50 dark:bg-gray-900">
+        <section id="features" className="py-20 bg-gray-50 dark:bg-gray-900 snap-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
               <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
                 Features that Set Us Apart
               </h2>
               <p className="mt-4 max-w-2xl text-xl text-gray-500 dark:text-gray-300 mx-auto">
-                Discover why EduSite is the preferred choice for learners worldwide.
+                Discover why CG Vidya is the preferred choice for learners worldwide.
               </p>
             </div>
             <div className="mt-20 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -92,7 +93,7 @@ export default function Home() {
         </section>
 
         {/* Testimonials Section */}
-        <section id="testimonials" className="py-20 bg-white dark:bg-gray-800">
+        <section id="testimonials" className="py-20 bg-white dark:bg-gray-800 snap-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-extrabold text-center text-gray-900 dark:text-white sm:text-4xl">
               What Our Students Say
@@ -102,7 +103,7 @@ export default function Home() {
               <div className="bg-gray-100 dark:bg-gray-700 overflow-hidden shadow rounded-lg">
                 <div className="px-4 py-5 sm:p-6">
                   <p className="text-base text-gray-500 dark:text-gray-300">
-                    &ldquo;EduSite has transformed the way I learn. The interactive lessons and expert instructors have helped me achieve my goals faster than I ever thought possible.&rdquo;
+                    &ldquo;CG Vidya has transformed the way I learn. The interactive lessons and expert instructors have helped me achieve my goals faster than I ever thought possible.&rdquo;
                   </p>
                   <div className="mt-4">
                     <p className="text-base font-medium text-gray-900 dark:text-white">Sarah Johnson</p>
@@ -114,7 +115,7 @@ export default function Home() {
               <div className="bg-gray-100 dark:bg-gray-700 overflow-hidden shadow rounded-lg">
                 <div className="px-4 py-5 sm:p-6">
                   <p className="text-base text-gray-500 dark:text-gray-300">
-                    &ldquo;The flexibility of EduSite&apos;s platform allowed me to balance my studies with my full-time job. I couldn&apos;t be happier with the results!&rdquo;
+                    &ldquo;The flexibility of CG Vidya&apos;s platform allowed me to balance my studies with my full-time job. I couldn&apos;t be happier with the results!&rdquo;
                   </p>
                   <div className="mt-4">
                     <p className="text-base font-medium text-gray-900 dark:text-white">Michael Chen</p>
@@ -126,7 +127,7 @@ export default function Home() {
               <div className="bg-gray-100 dark:bg-gray-700 overflow-hidden shadow rounded-lg">
                 <div className="px-4 py-5 sm:p-6">
                   <p className="text-base text-gray-500 dark:text-gray-300">
-                    &ldquo;As a lifelong learner, I&apos;ve tried many online platforms, but EduSite stands out with its quality content and user-friendly interface.&rdquo;
+                    &ldquo;As a lifelong learner, I&apos;ve tried many online platforms, but CG Vidya stands out with its quality content and user-friendly interface.&rdquo;
                   </p>
                   <div className="mt-4">
                     <p className="text-base font-medium text-gray-900 dark:text-white">Emily Rodriguez</p>
@@ -139,7 +140,7 @@ export default function Home() {
         </section>
 
         {/* Call to Action Section */}
-        <section id="cta" className="bg-blue-600 dark:bg-blue-800">
+        <section id="cta" className="bg-blue-600 dark:bg-blue-800 snap-center">
           <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
             <h2 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
               <span className="block">Ready to dive in?</span>
@@ -155,9 +156,9 @@ export default function Home() {
           </div>
         </section>
       </main>
-
+      </div>
       {/* Footer */}
-      <footer className="bg-white dark:bg-gray-900">
+      <footer className="bg-white dark:bg-gray-900 ">
         <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 md:flex md:items-center md:justify-between lg:px-8">
           <div className="flex justify-center space-x-6 md:order-2">
             <a href="#" className="text-gray-400 hover:text-gray-500">
@@ -180,7 +181,7 @@ export default function Home() {
             </a>
           </div>
           <div className="mt-8 md:mt-0 md:order-1">
-            <p className="text-center text-base text-gray-400">&copy; 2023 EduSite, Inc. All rights reserved.</p>
+            <p className="text-center text-base text-gray-400">&copy; 2023 CG Vidya, Inc. All rights reserved.</p>
           </div>
         </div>
       </footer>
