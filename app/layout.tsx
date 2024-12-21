@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 // Enhanced Metadata for SEO
 export const metadata: Metadata = {
-  metadataBase: new URL('https://chhattishgarhvidya.org'), // Replace with your actual domain
+  metadataBase: new URL('https://chhattisgarhvidya.org'), // Replace with your actual domain
   title: {
     default: "Chhattishgarh Vidya - Educational Resources Platform",
     template: "%s | Chhattishgarh Vidya"
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://chhattishgarhvidya.org",
+    url: "https://chhattisgarhvidya.org",
     title: "Chhattishgarh Vidya - Educational Resources Platform",
     description: "Comprehensive educational platform providing learning resources, courses, and educational support for students in Chhattishgarh.",
     siteName: "Chhattishgarh Vidya",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     // other search engine verifications if needed
   },
   alternates: {
-    canonical: "https://chhattishgarhvidya.org"
+    canonical: "https://chhattisgarhvidya.org"
   },
   robots: {
     index: true,
@@ -119,7 +119,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "WebSite",
               "name": "Chhattishgarh Vidya",
-              "url": "https://chhattishgarhvidya.org",
+              "url": "https://chhattisgarhvidya.org",
               "description": "Comprehensive educational platform providing learning resources, courses, and educational support for students in Chhattishgarh."
             })
           }}
