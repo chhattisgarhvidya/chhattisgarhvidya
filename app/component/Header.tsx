@@ -12,9 +12,7 @@ interface NavLink {
 }
 
 const navLinks: NavLink[] = [
-  { href: '#features', label: 'Features' },
-  { href: '#testimonials', label: 'Testimonials' },
-  { href: '#cta', label: 'Get Started' },
+    {href:'/courses',label:'Courses'},
 ]
 
 export function Header(): ReactElement {
@@ -73,7 +71,7 @@ export function Header(): ReactElement {
   }
 
   return (
-    <header className="bg-white dark:bg-gray-800 shadow-sm fixed w-full">
+    <header className="bg-white dark:bg-gray-800 shadow-sm z-10 fixed w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
             
