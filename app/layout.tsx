@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 // Enhanced Metadata for SEO
 export const metadata: Metadata = {
-  metadataBase: new URL('https://chhattisgarhvidya.org'), // Replace with your actual domain
+  metadataBase: new URL('https://chhattisgarhvidya.org'),
   title: {
     default: "Chhattishgarh Vidya - Educational Resources Platform",
     template: "%s | Chhattishgarh Vidya"
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     siteName: "Chhattishgarh Vidya",
     images: [
       {
-        url: "/og-image.png", // Create and replace with your og image
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Chhattishgarh Vidya - Educational Platform"
@@ -43,12 +43,10 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Chhattishgarh Vidya - Educational Resources Platform",
     description: "Comprehensive educational platform providing learning resources, courses, and educational support for students in Chhattishgarh.",
-    images: ["/twitter-image.png"] // Create and replace with your twitter card image
+    images: ["/twitter-image.png"]
   },
   verification: {
-    google: "your-google-site-verification-code", // Replace with actual verification code
-    // yandex: "your-yandex-verification-code",
-    // other search engine verifications if needed
+    google: "your-google-site-verification-code",
   },
   alternates: {
     canonical: "https://chhattisgarhvidya.org"
@@ -110,8 +108,22 @@ export default function RootLayout({
           </main>
           <Footer />
         </Providers>
-        
-        {/* Optional: Add schema.org JSON-LD for rich results */}
+
+        {/* Microsoft Clarity Analytics Script */}
+        <script 
+          type="text/javascript" 
+          dangerouslySetInnerHTML={{
+            __html: `
+            (function(c,l,a,r,i,t,y){
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "phh0wrvpv9");
+            `
+          }}
+        />
+
+        {/* Schema.org JSON-LD for rich results */}
         <script 
           type="application/ld+json" 
           dangerouslySetInnerHTML={{
