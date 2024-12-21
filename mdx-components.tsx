@@ -1,55 +1,77 @@
 import type { MDXComponents } from 'mdx/types'
-import Image from 'next/image'
 import Link from 'next/link'
 
-// Server component by default
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     h1: ({ children }) => (
-      <h1 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400">
+      <h1 className="text-4xl font-bold text-center mb-6 text-gray-900 dark:text-white">
         {children}
       </h1>
     ),
     h2: ({ children }) => (
-      <h2 className="text-3xl font-semibold text-gray-800 dark:text-gray-200 mt-8 mb-4">
+      <h2 className="text-3xl font-bold mb-4 text-gray-900 dark:text-white">
         {children}
       </h2>
     ),
-    a: ({ href, children }) => (
-      <Link 
-        href={href ?? '#'} 
-        className="text-blue-600 dark:text-blue-400 hover:underline"
-      >
+    h3: ({ children }) => (
+      <h3 className="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">
         {children}
-      </Link>
+      </h3>
     ),
-    pre: ({ children }) => (
-      <div className="relative">
-        <pre className="bg-gray-100 dark:bg-gray-800 p-4 rounded-lg overflow-x-auto shadow-lg">
+    p: ({ children }) => (
+      <p className="mb-4 text-gray-600 dark:text-gray-300">
+        {children}
+      </p>
+    ),
+    a: ({ href, children, ...props }) => {
+      const isExternal = href?.startsWith('http')
+      if (isExternal) {
+        return (
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 hover:underline dark:text-blue-400"
+            {...props}
+          >
+            {children}
+          </a>
+        )
+      }
+      return (
+        <Link
+          href={href || '/'}
+          className="text-blue-600 hover:underline dark:text-blue-400"
+          {...props}
+        >
           {children}
-        </pre>
-      </div>
-    ),
-    blockquote: ({ children }) => (
-      <blockquote className="border-l-4 border-blue-500 pl-4 py-2 my-4 bg-blue-50 dark:bg-blue-900/20 rounded-r">
-        {children}
-      </blockquote>
-    ),
+        </Link>
+      )
+    },
     ul: ({ children }) => (
-      <ul className="space-y-2 my-4 list-disc pl-5">
+      <ul className="list-disc list-inside mb-4 space-y-2 text-gray-600 dark:text-gray-300">
         {children}
       </ul>
     ),
-    img: (props) => (
-      <div className="relative aspect-video w-full my-4 rounded-xl overflow-hidden shadow-lg">
-        <Image
-          {...props}
-          alt={props.alt || ''}
-          width={800}
-          height={450}
-          className="object-cover"
-        />
-      </div>
+    ol: ({ children }) => (
+      <ol className="list-decimal list-inside mb-4 space-y-2 text-gray-600 dark:text-gray-300">
+        {children}
+      </ol>
+    ),
+    li: ({ children }) => (
+      <li className="text-gray-600 dark:text-gray-300">
+        {children}
+      </li>
+    ),
+    code: ({ children }) => (
+      <code className="bg-gray-100 dark:bg-gray-800 rounded px-1 py-0.5">
+        {children}
+      </code>
+    ),
+    pre: ({ children }) => (
+      <pre className="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 overflow-x-auto mb-4">
+        {children}
+      </pre>
     ),
     ...components,
   }
