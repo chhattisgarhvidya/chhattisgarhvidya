@@ -1,13 +1,8 @@
-import './globals.css'
-import type { Metadata } from 'next'
+import { Providers } from './provider'
 import { Inter } from 'next/font/google'
+import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
-
-export const metadata: Metadata = {
-  title: 'EduSite - Transform Your Learning',
-  description: 'Unlock your potential with our cutting-edge online learning platform.',
-}
 
 export default function RootLayout({
   children,
@@ -16,8 +11,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Providers>
+          <main className="min-h-screen">
+            {children}
+          </main>
+        </Providers>
+      </body>
     </html>
   )
 }
-
