@@ -12,6 +12,9 @@ export default function Page() {
     <main className="mt-20 md:px-4   lg:px-8">
         <div className='md:max-w-4xl pb-10 pt-5  mx-auto'>
         <Heading text={'Explore comprehensive solutions to AI Lab practicals for Betch 8th semester students.'}/>
+        <div>
+        
+        </div>
         </div>
       <div className="space-y-8">
         {content.map((item, index) => (
