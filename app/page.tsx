@@ -10,8 +10,8 @@ export default function Home() {
   const [charIndex, setCharIndex] = useState(0);
   const [quoteIndex, setQuoteIndex] = useState(0);
   // Adjusted speeds for smoother animation
-  const typingSpeed = 100;  // Reduced from 350 for faster typing
-  const deletingSpeed = 50;  // Reduced from 300 for faster deleting
+  const typingSpeed = 150;  // Reduced from 350 for faster typing
+  const deletingSpeed = 80;  // Reduced from 300 for faster deleting
   const pauseDuration = 2000;  // Added explicit pause duration constant
   const isMounted = useRef(false);
 
