@@ -26,7 +26,7 @@ export default function CourseContent() {
               <li><strong>I.</strong> Define Artificial intelligence, Discuss its advantage and limitations. </li>
               <li><strong>II.</strong> What are AI problems and how are they categorized as NP problems? </li>
               <li><strong>III.</strong> Explain the role of Intelligent Agents in Artificial Intelligence and describe its types in detail. </li>
-              <li><strong>IV.</strong> Explain "The AI Ladder" and its significance for businesses adopting AI. </li>
+              <li><strong>IV.</strong> Explain &ldquo;The AI Ladder&rdquo; and its significance for businesses adopting AI. </li>
             </ul>
           </div>
 

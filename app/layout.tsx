@@ -100,7 +100,7 @@ export default function RootLayout({
       <body className={`${inter.className}  antialiased`}>
         <Providers>
           <Header />
-          <main className="min-h-screen">{children}</main>
+          <main >{children}</main>
           <Footer />
         </Providers>
 

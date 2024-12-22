@@ -555,7 +555,6 @@ export default function Page() {
             question={item.question}
             description={item.description}
             code={item.code}
-            index={index}
           />
         ))}
       </div>

@@ -7,10 +7,10 @@ type QuestionCardProps = {
   question: string;
   description: string;
   code: string;
-  index: number;
+
 };
 
-const Labcards = ({ question, description, code, index }: QuestionCardProps) => {
+const Labcards = ({ question, description, code }: QuestionCardProps) => {
   const codeRef = useRef<HTMLDivElement | null>(null);
   const { theme } = useTheme();
 

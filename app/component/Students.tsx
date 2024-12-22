@@ -15,6 +15,7 @@ const studentResources = [
     students: '200+ students',
     duration: '2 weeks prep',
     rating: 4.5,
+    tags: ['CSVTU', 'BETCH 5th', 'BETCH AI', 'BETCH AIML'],
     href: '/betch-5th-sem-imp',
   },
   {
@@ -25,6 +26,7 @@ const studentResources = [
     students: '300+ students',
     duration: '1 month',
     rating: 4.8,
+    tags: ['CSVTU', 'BETCH 6th', 'BETCH AI', 'BETCH AIML'],
     href: '/ailab',
   },
   {
@@ -35,6 +37,7 @@ const studentResources = [
     students: '150+ students',
     duration: '3 weeks',
     rating: 4.9,
+    tags: ['CSVTU', 'BETCH 6th', 'BETCH AI', 'BETCH AIML'],
     href: '/resources/data-structures-crash-course',
   },
 ];

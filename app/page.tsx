@@ -77,7 +77,7 @@ export default function Home() {
             <span className="block">Transform Your Learning</span>
             <span className="block py-3 text-blue-600 dark:text-blue-400">With CG Vidya</span>
           </h1>
-          <p className="mt-3 max-w-md mx-auto md:text-lg text-gray-500 dark:text-gray-300 sm:text-xl md:mt-5 md:text-2xl md:max-w-3xl">
+          <p className="mt-3 max-w-md mx-auto  text-gray-500 dark:text-gray-300 sm:text-xl md:mt-5 md:text-2xl md:max-w-3xl">
             <span>{currentQuote}</span>
             <span className="blinking-cursor">|</span>
           </p>
