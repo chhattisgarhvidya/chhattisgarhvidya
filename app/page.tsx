@@ -9,8 +9,10 @@ export default function Home() {
   const [isDeleting, setIsDeleting] = useState(false);
   const [charIndex, setCharIndex] = useState(0);
   const [quoteIndex, setQuoteIndex] = useState(0);
-  const typingSpeed = 350;
-  const deletingSpeed = 300;
+  // Adjusted speeds for smoother animation
+  const typingSpeed = 100;  // Reduced from 350 for faster typing
+  const deletingSpeed = 50;  // Reduced from 300 for faster deleting
+  const pauseDuration = 2000;  // Added explicit pause duration constant
   const isMounted = useRef(false);
 
   const quotes = [
@@ -36,7 +38,7 @@ export default function Home() {
         setCharIndex((prev) => prev - 1);
       } else if (!isDeleting && charIndex === currentFullQuote.length) {
         // Pause before deleting
-        setTimeout(() => setIsDeleting(true), 2000);
+        setTimeout(() => setIsDeleting(true), pauseDuration);
       } else if (isDeleting && charIndex === 0) {
         // Move to next quote
         setIsDeleting(false);
@@ -45,19 +47,19 @@ export default function Home() {
     };
 
     const speed = isDeleting ? deletingSpeed : typingSpeed;
-    const animationFrame = requestAnimationFrame(handleTyping);
+    const timeoutId = setTimeout(handleTyping, speed);
 
     return () => {
-      cancelAnimationFrame(animationFrame); // Cleanup on component unmount
+      clearTimeout(timeoutId);
       isMounted.current = false;
     };
   }, [charIndex, isDeleting, quoteIndex]);
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white">
+      {/* Rest of the JSX remains unchanged */}
       <div className="snap-y">
         <main>
-          {/* Hero Section */}
           <section className="bg-white h-screen flex items-center dark:bg-gray-800 py-20 snap-center">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center">
