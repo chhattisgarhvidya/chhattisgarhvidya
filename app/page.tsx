@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Courses from './component/Courses';
 import Students from './component/Students';
 
@@ -9,8 +9,9 @@ export default function Home() {
   const [isDeleting, setIsDeleting] = useState(false);
   const [charIndex, setCharIndex] = useState(0);
   const [quoteIndex, setQuoteIndex] = useState(0);
-  const typingSpeed = 150;
-  const deletingSpeed = 100;
+  const typingSpeed = 350;
+  const deletingSpeed = 300;
+  const isMounted = useRef(false);
 
   const quotes = [
     'Empower Your Future Through Learning.',
@@ -20,6 +21,8 @@ export default function Home() {
   ];
 
   useEffect(() => {
+    isMounted.current = true;
+
     const handleTyping = () => {
       const currentFullQuote = quotes[quoteIndex];
 
@@ -42,9 +45,12 @@ export default function Home() {
     };
 
     const speed = isDeleting ? deletingSpeed : typingSpeed;
-    const typingTimeout = setTimeout(handleTyping, speed);
+    const animationFrame = requestAnimationFrame(handleTyping);
 
-    return () => clearTimeout(typingTimeout);
+    return () => {
+      cancelAnimationFrame(animationFrame); // Cleanup on component unmount
+      isMounted.current = false;
+    };
   }, [charIndex, isDeleting, quoteIndex]);
 
   return (
@@ -87,8 +93,6 @@ export default function Home() {
 
           <Courses />
           <Students />
-
-
 
           {/* Features Section */}
           <section id="features" className="py-20 bg-gray-50 dark:bg-gray-900 snap-center">
