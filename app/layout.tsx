@@ -75,6 +75,11 @@ export default function RootLayout({
         {/* Core Web Vitals and Performance Optimization */}
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
 
+        {/* og */}
+        <meta property="og:title" content={'Chhattisgarh Vidya Education site'} />
+        <meta property="og:description" content={'This site provide the conent for college notes and online courses'} />
+        <meta property="og:image" content={'/cg-logo.svg'} />
+
         {/* Favicon and Touch Icons */}
         <link rel="icon" href="/favicon_io/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png" />
@@ -90,7 +95,8 @@ export default function RootLayout({
         <meta name="content-language" content="en-IN" />
 
         {/* Additional SEO Meta Tags */}
-        <meta name="author" content="Chhattishgarh Vidya Team" />
+        <meta name="author" cont
+        ent="Chhattishgarh Vidya Team" />
         <meta name="publisher" content="Chhattishgarh Vidya" />
 
         {/* Preconnect for Performance */}

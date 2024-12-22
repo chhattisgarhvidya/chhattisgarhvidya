@@ -19,7 +19,7 @@ const studentResources = [
     href: '/betch-5th-sem-imp',
   },
   {
-    title: 'Betch 6th sem AI Lab',
+    title: 'Betch 8th sem AI Lab',
     description: 'Comprehensive notes to ace Python programming.',
     icon: <Book className="h-6 w-6 text-green-500 dark:text-green-400" />,
     level: 'Beginner',
