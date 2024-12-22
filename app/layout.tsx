@@ -102,7 +102,7 @@ export default function RootLayout({
         {/* Additional SEO Meta Tags */}
         <meta name="author" content="Chhattishgarh Vidya Team" />
         <meta name="publisher" content="Chhattishgarh Vidya" />
-
+        <meta name="google-adsense-account" content="ca-pub-2862502842026309" />
         {/* Preconnect for Performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
