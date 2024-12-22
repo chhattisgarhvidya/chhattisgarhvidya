@@ -11,7 +11,7 @@ export default function Home() {
   const [currentQuote, setCurrentQuote] = useState('');
   const [charIndex, setCharIndex] = useState(0);
   const [quoteIndex, setQuoteIndex] = useState(0);
-  const [typingSpeed, setTypingSpeed] = useState(150);
+  const typingSpeed = 150;
 
   const quotes = [
     'Empower Your Future Through Learning.',
