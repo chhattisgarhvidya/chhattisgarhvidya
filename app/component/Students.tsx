@@ -8,24 +8,24 @@ import Link from 'next/link';
 
 const studentResources = [
   {
-    title: '5th Sem Important Questions',
-    description: 'Key questions to prepare for your semester exams.',
+    title: 'Betch 5th Sem Important Questions',
+    description: 'AI Key questions to prepare for your semester exams.',
     icon: <Book className="h-6 w-6 text-blue-500 dark:text-blue-400" />,
     level: 'Intermediate',
     students: '200+ students',
     duration: '2 weeks prep',
     rating: 4.5,
-    href: '/resources/5th-sem-important-questions',
+    href: '/betch-5th-sem-imp',
   },
   {
-    title: 'Python Programming Notes',
+    title: 'Betch 6th sem AI Lab',
     description: 'Comprehensive notes to ace Python programming.',
     icon: <Book className="h-6 w-6 text-green-500 dark:text-green-400" />,
     level: 'Beginner',
     students: '300+ students',
     duration: '1 month',
     rating: 4.8,
-    href: '/resources/python-programming-notes',
+    href: '/ailab',
   },
   {
     title: 'Data Structures Crash Course',
@@ -38,14 +38,19 @@ const studentResources = [
     href: '/resources/data-structures-crash-course',
   },
 ];
-
 export default function Students() {
   return (
     <div>
-      <section id="student" className="py-20 px-[3%] bg-gray-50 dark:bg-gray-900">
-        <Heading text="Student Corner" />
-        <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <section id="student" className="py-20 max-sm:px-4 bg-gray-50 dark:bg-gray-900">
+        <div className="max-w-7xl mx-auto  py-12 sm:px-6 lg:px-8">
+          <Heading text="Student Corner" />
+          
+          {/* Added descriptive text below the Heading */}
+          <p className="mt-4 text-center   md:w-5/6 mx-auto md:text-lg text-gray-600 dark:text-gray-300">
+            Welcome to the Student Corner! Explore a curated collection of resources, including key questions, notes, and crash courses, tailored to enhance your learning experience. Stay ahead and make your preparation more effective.
+          </p>
+
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mt-8">
             {studentResources.map((resource, index) => (
               <Link
                 key={index}

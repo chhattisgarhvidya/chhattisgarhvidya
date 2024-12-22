@@ -12,16 +12,16 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://chhattisgarhvidya.org'),
   title: {
     default: "Chhattishgarh Vidya - Educational Resources Platform",
-    template: "%s | Chhattishgarh Vidya"
+    template: "%s | Chhattishgarh Vidya",
   },
   description: "Comprehensive educational platform providing learning resources, courses, and educational support for students in Chhattishgarh.",
   applicationName: "Chhattishgarh Vidya",
   keywords: [
-    "education", 
-    "Chhattishgarh", 
-    "online learning", 
-    "educational resources", 
-    "student support"
+    "education",
+    "Chhattishgarh",
+    "online learning",
+    "educational resources",
+    "student support",
   ],
   openGraph: {
     type: "website",
@@ -35,21 +35,21 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Chhattishgarh Vidya - Educational Platform"
-      }
-    ]
+        alt: "Chhattishgarh Vidya - Educational Platform",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Chhattishgarh Vidya - Educational Resources Platform",
     description: "Comprehensive educational platform providing learning resources, courses, and educational support for students in Chhattishgarh.",
-    images: ["/twitter-image.png"]
+    images: ["/twitter-image.png"],
   },
   verification: {
     google: "your-google-site-verification-code",
   },
   alternates: {
-    canonical: "https://chhattisgarhvidya.org"
+    canonical: "https://chhattisgarhvidya.org",
   },
   robots: {
     index: true,
@@ -59,9 +59,9 @@ export const metadata: Metadata = {
       follow: true,
       'max-video-preview': -1,
       'max-image-preview': 'large',
-      'max-snippet': -1
-    }
-  }
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -70,70 +70,66 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html 
-      className="scroll-smooth" 
-      lang="en" 
-      suppressHydrationWarning
-    >
+    <html className="scroll-smooth" lang="en" suppressHydrationWarning>
       <head>
         {/* Core Web Vitals and Performance Optimization */}
-        <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-        
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+
         {/* Favicon and Touch Icons */}
-        <link rel="icon" type="image/x-icon" href="/favicon_io/favicon.ico" />
+        <link rel="icon" href="/favicon_io/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png" />
-        
+        <link rel="manifest" href="/favicon_io/site.webmanifest" />
+
+
         {/* Manifest and Theme Color */}
-        <link rel="manifest" href="/site.webmanifest" />
         <meta name="theme-color" content="#ffffff" />
-        
+
         {/* Accessibility and Internationalization */}
         <meta name="content-language" content="en-IN" />
-        
+
         {/* Additional SEO Meta Tags */}
         <meta name="author" content="Chhattishgarh Vidya Team" />
         <meta name="publisher" content="Chhattishgarh Vidya" />
-        
+
         {/* Preconnect for Performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body className={`${inter.className} antialiased`}>
+      <body className={`${inter.className}  antialiased`}>
         <Providers>
           <Header />
-          <main className="min-h-screen">
-            {children}
-          </main>
+          <main className="min-h-screen">{children}</main>
           <Footer />
         </Providers>
 
         {/* Microsoft Clarity Analytics Script */}
-        <script 
-          type="text/javascript" 
+        <script
+          type="text/javascript"
           dangerouslySetInnerHTML={{
             __html: `
-            (function(c,l,a,r,i,t,y){
-                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "phh0wrvpv9");
-            `
+              (function(c,l,a,r,i,t,y){
+                  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+              })(window, document, "clarity", "script", "phh0wrvpv9");
+            `,
           }}
         />
 
         {/* Schema.org JSON-LD for rich results */}
-        <script 
-          type="application/ld+json" 
+        <script
+          type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
-              "name": "Chhattishgarh Vidya",
-              "url": "https://chhattisgarhvidya.org",
-              "description": "Comprehensive educational platform providing learning resources, courses, and educational support for students in Chhattishgarh."
-            })
+              name: "Chhattishgarh Vidya",
+              url: "https://chhattisgarhvidya.org",
+              description:
+                "Comprehensive educational platform providing learning resources, courses, and educational support for students in Chhattishgarh.",
+            }),
           }}
         />
       </body>

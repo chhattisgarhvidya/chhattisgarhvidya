@@ -162,7 +162,7 @@ export default function Home() {
                     &ldquo;CG Vidya has transformed the way I learn. The interactive lessons and expert instructors have helped me achieve my goals faster than I ever thought possible.&rdquo;
                   </p>
                   <div className="mt-4">
-                    <p className="text-base font-medium text-gray-900 dark:text-white">Sarah Johnson</p>
+                    <p className="text-base font-medium text-gray-900 dark:text-white">Vikky Saha</p>
                     <p className="text-sm text-gray-500 dark:text-gray-300">Web Developer</p>
                   </div>
                 </div>
@@ -174,7 +174,7 @@ export default function Home() {
                     &ldquo;The flexibility of CG Vidya&apos;s platform allowed me to balance my studies with my full-time job. I couldn&apos;t be happier with the results!&rdquo;
                   </p>
                   <div className="mt-4">
-                    <p className="text-base font-medium text-gray-900 dark:text-white">Michael Chen</p>
+                    <p className="text-base font-medium text-gray-900 dark:text-white">Mandira Datta</p>
                     <p className="text-sm text-gray-500 dark:text-gray-300">Data Analyst</p>
                   </div>
                 </div>
@@ -186,7 +186,7 @@ export default function Home() {
                     &ldquo;As a lifelong learner, I&apos;ve tried many online platforms, but CG Vidya stands out with its quality content and user-friendly interface.&rdquo;
                   </p>
                   <div className="mt-4">
-                    <p className="text-base font-medium text-gray-900 dark:text-white">Emily Rodriguez</p>
+                    <p className="text-base font-medium text-gray-900 dark:text-white">Akash Patel</p>
                     <p className="text-sm text-gray-500 dark:text-gray-300">Marketing Specialist</p>
                   </div>
                 </div>
