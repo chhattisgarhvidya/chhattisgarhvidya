@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { useTheme } from 'next-themes'
 import { Moon, Sun, Menu, X } from 'lucide-react'
 import Link from 'next/link'
@@ -27,9 +27,10 @@ export function Header(): ReactElement {
     setMounted(true)
   }, [])
 
-  const toggleTheme = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark')
-  }
+  const toggleTheme = useCallback(() => {
+    setTheme(theme === 'dark' ? 'light' : 'dark');
+  }, [theme]);
+  
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)

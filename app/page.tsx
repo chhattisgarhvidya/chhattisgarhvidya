@@ -1,17 +1,16 @@
-'use client'
+'use client';
 
 import { useState, useEffect } from 'react';
 import Courses from './component/Courses';
 import Students from './component/Students';
 
 export default function Home() {
-  const [mounted, setMounted] = useState(false);
-
-  // Typing animation state
   const [currentQuote, setCurrentQuote] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
   const [charIndex, setCharIndex] = useState(0);
   const [quoteIndex, setQuoteIndex] = useState(0);
   const typingSpeed = 150;
+  const deletingSpeed = 100;
 
   const quotes = [
     'Empower Your Future Through Learning.',
@@ -24,28 +23,29 @@ export default function Home() {
     const handleTyping = () => {
       const currentFullQuote = quotes[quoteIndex];
 
-      if (charIndex < currentFullQuote.length) {
+      if (!isDeleting && charIndex < currentFullQuote.length) {
+        // Typing
         setCurrentQuote(currentFullQuote.slice(0, charIndex + 1));
         setCharIndex((prev) => prev + 1);
-      } else {
-        setTimeout(() => {
-          setCharIndex(0);
-          setQuoteIndex((prev) => (prev + 1) % quotes.length);
-        }, 2000); // Pause before switching quotes
+      } else if (isDeleting && charIndex > 0) {
+        // Deleting
+        setCurrentQuote(currentFullQuote.slice(0, charIndex - 1));
+        setCharIndex((prev) => prev - 1);
+      } else if (!isDeleting && charIndex === currentFullQuote.length) {
+        // Pause before deleting
+        setTimeout(() => setIsDeleting(true), 2000);
+      } else if (isDeleting && charIndex === 0) {
+        // Move to next quote
+        setIsDeleting(false);
+        setQuoteIndex((prev) => (prev + 1) % quotes.length);
       }
     };
 
-    const typingTimeout = setTimeout(handleTyping, typingSpeed);
+    const speed = isDeleting ? deletingSpeed : typingSpeed;
+    const typingTimeout = setTimeout(handleTyping, speed);
+
     return () => clearTimeout(typingTimeout);
-  }, [charIndex, quoteIndex, typingSpeed]);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return null;
-  }
+  }, [charIndex, isDeleting, quoteIndex]);
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white">
@@ -60,7 +60,8 @@ export default function Home() {
                   <span className="block py-3 text-blue-600 dark:text-blue-400">With CG Vidya</span>
                 </h1>
                 <p className="mt-3 max-w-md mx-auto text-gray-500 dark:text-gray-300 sm:text-xl md:mt-5 md:text-2xl md:max-w-3xl">
-                  {currentQuote}<span className="blinking-cursor">|</span>
+                  {currentQuote}
+                  <span className="blinking-cursor">|</span>
                 </p>
                 <div className="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
                   <div className="rounded-md shadow">
@@ -86,6 +87,8 @@ export default function Home() {
 
           <Courses />
           <Students />
+
+
 
           {/* Features Section */}
           <section id="features" className="py-20 bg-gray-50 dark:bg-gray-900 snap-center">
