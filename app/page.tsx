@@ -64,8 +64,8 @@ export default function Home() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="text-center">
                 <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
-                  <span >Transform Your Learning</span>
-                  <span className=" py-3 text-blue-600 dark:text-blue-400">With CG Vidya</span>
+                  <span className=" md:leading-[100px]">Transform Your Learning</span><br/>
+                  <span className=" py-4 max-sm:leading-tight text-blue-600 dark:text-blue-400">With CG Vidya</span>
                 </h1>
                 <p className="mt-3 max-w-md mx-auto text-gray-500 dark:text-gray-300 sm:text-xl md:mt-5 md:text-2xl md:max-w-3xl">
                   {currentQuote}
