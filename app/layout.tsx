@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     images: ["/twitter-image.png"],
   },
   verification: {
-    google: "googlef4be85ad5d338cab",
+    google: "lCQx8rEMNq08mDEVtbgznnpf1M1rmcgi16O2ThfSR8Q",
   },
   alternates: {
     canonical: "https://chhattisgarhvidya.org",
@@ -81,7 +81,7 @@ export default function RootLayout({
         <meta property="og:image" content={'/cg-logo.svg'} />
 
         {/* google console */}
-        <meta name="google-site-verification" content="googlef4be85ad5d338cab" />
+        <meta name="google-site-verification" content="lCQx8rEMNq08mDEVtbgznnpf1M1rmcgi16O2ThfSR8Q" />
 
 
 
