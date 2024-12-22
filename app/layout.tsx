@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     images: ["/twitter-image.png"],
   },
   verification: {
-    google: "your-google-site-verification-code",
+    google: "googlef4be85ad5d338cab",
   },
   alternates: {
     canonical: "https://chhattisgarhvidya.org",
@@ -80,6 +80,11 @@ export default function RootLayout({
         <meta property="og:description" content={'This site provide the conent for college notes and online courses'} />
         <meta property="og:image" content={'/cg-logo.svg'} />
 
+        {/* google console */}
+        <meta name="google-site-verification" content="googlef4be85ad5d338cab" />
+
+
+
         {/* Favicon and Touch Icons */}
         <link rel="icon" href="/favicon_io/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png" />
@@ -95,8 +100,7 @@ export default function RootLayout({
         <meta name="content-language" content="en-IN" />
 
         {/* Additional SEO Meta Tags */}
-        <meta name="author" cont
-        ent="Chhattishgarh Vidya Team" />
+        <meta name="author" content="Chhattishgarh Vidya Team" />
         <meta name="publisher" content="Chhattishgarh Vidya" />
 
         {/* Preconnect for Performance */}
