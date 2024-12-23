@@ -2,14 +2,14 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { Search, Code, Database, Brain, Star, Users, Clock } from 'lucide-react'
+import { Search, Code, Shield, Star, Users, Clock,Computer } from 'lucide-react'
 
 const courses = [
   {
     title: 'Web Development',
     description: 'Learn modern web development from basics to advanced concepts',
     icon: <Code className="h-6 w-6" />,
-    href: '/courses/web-development',
+    href: 'https://courses.chhattisgarhvidya.org/courses',
     level: 'Beginner to Advanced',
     students: '2.5k+',
     rating: 4.8,
@@ -18,10 +18,10 @@ const courses = [
     category: 'programming'
   },
   {
-    title: 'Data Structures',
-    description: 'Master fundamental data structures and algorithms',
-    icon: <Database className="h-6 w-6" />,
-    href: '/courses/data-structures',
+    title: 'Introduction to Cybersecurity',
+    description: 'Master fundamental Cybersecurity with our industry experts',
+    icon: <Shield className="h-6 w-6" />,
+    href: 'https://courses.chhattisgarhvidya.org/courses',
     level: 'Intermediate',
     students: '1.8k+',
     rating: 4.9,
@@ -30,11 +30,11 @@ const courses = [
     category: 'programming'
   },
   {
-    title: 'Machine Learning Basics',
-    description: 'Introduction to machine learning concepts and applications',
-    icon: <Brain className="h-6 w-6" />,
-    href: '/courses/ml-basics',
-    level: 'Intermediate',
+    title: 'Introduction to Threate Modeling',
+    description: 'Learn systematic approaches to identify and analyze security threats',
+    icon: <Computer className="h-6 w-6" />,
+    href: 'https://courses.chhattisgarhvidya.org/courses',
+    level: 'Beginner to Advanced',
     students: '1.2k+',
     rating: 4.7,
     duration: '10 weeks',
@@ -56,21 +56,21 @@ export default function Courses() {
   })
 
   return (
-    <div id='courses' className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <div id='courses' className="  bg-gray-50 dark:bg-gray-900">
       {/* Hero Section */}
       <div className="bg-white dark:bg-gray-800 py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
+        <div  className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div  className="text-center">
             <h1 className="text-4xl font-bold text-gray-900 dark:text-white sm:text-5xl">
               Explore Our Courses
             </h1>
-            <p className="mt-4 text-xl text-gray-600 dark:text-gray-300">
+            <p  className="mt-4 text-xl text-gray-600 dark:text-gray-300">
               Start your learning journey with our comprehensive courses
             </p>
           </div>
 
           {/* Search Bar */}
-          <div className="mt-8 max-w-xl mx-auto">
+          <div  className="mt-8 max-w-xl mx-auto">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" />
               <input
@@ -123,7 +123,7 @@ export default function Courses() {
       <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {filteredCourses.map((course) => (
-            <Link
+            <Link target='blank'
               key={course.title}
               href={course.href}
               className="group relative overflow-hidden rounded-lg bg-white p-6 shadow-lg transition-transform hover:-translate-y-1 dark:bg-gray-800"

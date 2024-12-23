@@ -15,6 +15,7 @@ const studentResources = [
     students: '200+ students',
     duration: '2 weeks prep',
     rating: 4.5,
+    Categories:'Betch AIML 5th sem ',
     tags: ['CSVTU', 'BETCH 5th', 'BETCH AI', 'BETCH AIML'],
     href: '/betch-5th-sem-imp',
   },
@@ -26,30 +27,32 @@ const studentResources = [
     students: '300+ students',
     duration: '1 month',
     rating: 4.8,
-    tags: ['CSVTU', 'BETCH 6th', 'BETCH AI', 'BETCH AIML'],
-    href: '/ailab',
+    Categories:'Betch AIML 8th sem ',
+    tags: ['CSVTU', 'BETCH 6th', 'AI Lab', 'BETCH AIML'],
+    href: '/ailab-8sem',
   },
   {
-    title: 'Data Structures Crash Course',
-    description: 'Quick revision guide for data structures.',
+    title: 'Betch 6 Sem Data Security Lab',
+    description: 'Quick revision guide for data Secutiry Lab in C/C++.',
     icon: <Book className="h-6 w-6 text-red-500 dark:text-red-400" />,
     level: 'Advanced',
     students: '150+ students',
     duration: '3 weeks',
     rating: 4.9,
-    tags: ['CSVTU', 'BETCH 6th', 'BETCH AI', 'BETCH AIML'],
-    href: '/resources/data-structures-crash-course',
+    Categories:'Betch AIML 6th sem ',
+    tags: ['CSVTU', 'BETCH 6th', 'Data Security Lab', 'BETCH AIML'],
+    href: '/dslab-6sem',
   },
 ];
+
 export default function Students() {
   return (
     <div>
       <section id="student" className="py-20 max-sm:px-4 bg-gray-50 dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto  py-12 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto py-12 sm:px-6 lg:px-8">
           <Heading text="Student Corner" />
           
-          {/* Added descriptive text below the Heading */}
-          <p className="mt-4 text-center   md:w-5/6 mx-auto md:text-lg text-gray-600 dark:text-gray-300">
+          <p className="mt-4 text-center md:w-5/6 mx-auto md:text-lg text-gray-600 dark:text-gray-300">
             Welcome to the Student Corner! Explore a curated collection of resources, including key questions, notes, and crash courses, tailored to enhance your learning experience. Stay ahead and make your preparation more effective.
           </p>
 
@@ -69,6 +72,19 @@ export default function Students() {
                 </div>
                 <Subheading text={resource.title} />
                 <p className="mt-2 text-gray-600 dark:text-gray-300">{resource.description}</p>
+                
+                {/* Tags Section */}
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {resource.tags.map((tag, tagIndex) => (
+                    <span
+                      key={tagIndex}
+                      className="px-2 py-1 text-xs rounded-full bg-gray-100 text-gray-600 dark:bg-blue-900 dark:text-blue-300"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
                 <div className="mt-6 flex items-center justify-between text-sm">
                   <div className="flex items-center text-gray-600 dark:text-gray-400">
                     <Users className="h-4 w-4" />

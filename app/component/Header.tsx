@@ -14,7 +14,8 @@ interface NavLink {
 
 const navLinks: NavLink[] = [
     {href:'/#courses',label:'Courses'},
-    {href:'/#student',label:'Students  '}
+    {href:'/#student',label:'Students  '},
+    {href:'https://quiz.chhattisgarhvidya.org/', label:'Quiz'}
 ]
 
 export function Header(): ReactElement {
@@ -59,7 +60,8 @@ export function Header(): ReactElement {
             <div className="hidden sm:ml-6 sm:flex sm:items-center">
               <nav className="space-x-4">
                 {navLinks.map((link) => (
-                  <Link
+                  <Link 
+                  target={link.label===`Quiz`?`  `:`blank`}
                     key={link.href}
                     href={link.href}
                     className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
@@ -111,6 +113,7 @@ export function Header(): ReactElement {
             <nav className="space-x-4">
               {navLinks.map((link) => (
                 <Link
+                target={link.label===`Quiz`?`  `:`blank`}
                   key={link.href}
                   href={link.href}
                   className="text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"
@@ -144,6 +147,7 @@ export function Header(): ReactElement {
           <div className="px-2 pt-2 pb-3 space-y-1">
             {navLinks.map((link) => (
               <Link
+              target={link.label===`Quiz`?`  `:`blank`}
                 key={link.href}
                 href={link.href}
                 className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400"

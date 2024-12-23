@@ -3,7 +3,7 @@
 
 import Heading from '../component/atoms/heading';
 import Labcards from '../component/molecules/Labcards';
-import {content} from '../../public/Data/ailab6sem'
+import {content} from '../../public/Data/ailab8sem'
 export default function Page() {
 
 
