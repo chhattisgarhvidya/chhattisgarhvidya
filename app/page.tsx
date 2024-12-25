@@ -138,7 +138,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-
+       
         {/* Testimonials Section */}
         <section id="testimonials" className="py-20 bg-white dark:bg-gray-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -150,7 +150,7 @@ export default function Home() {
               <div className="bg-gray-100 dark:bg-gray-700 overflow-hidden shadow rounded-lg">
                 <div className="px-4 py-5 sm:p-6">
                   <p className="text-base text-gray-500 dark:text-gray-300">
-                    "EduSite has transformed the way I learn. The interactive lessons and expert instructors have helped me achieve my goals faster than I ever thought possible."
+                    &ldquo;EduSite has transformed the way I learn. The interactive lessons and expert instructors have helped me achieve my goals faster than I ever thought possible.&rdquo;
                   </p>
                   <div className="mt-4">
                     <p className="text-base font-medium text-gray-900 dark:text-white">Sharansh Mishra</p>
@@ -162,7 +162,7 @@ export default function Home() {
               <div className="bg-gray-100 dark:bg-gray-700 overflow-hidden shadow rounded-lg">
                 <div className="px-4 py-5 sm:p-6">
                   <p className="text-base text-gray-500 dark:text-gray-300">
-                    "The flexibility of EduSite's platform allowed me to balance my studies with my full-time job. I couldn't be happier with the results!"
+                    &ldquo;The flexibility of EduSite&apos;s platform allowed me to balance my studies with my full-time job. I couldn&apos;t be happier with the results!&rdquo;
                   </p>
                   <div className="mt-4">
                     <p className="text-base font-medium text-gray-900 dark:text-white">Mandira Datta</p>
@@ -174,7 +174,7 @@ export default function Home() {
               <div className="bg-gray-100 dark:bg-gray-700 overflow-hidden shadow rounded-lg">
                 <div className="px-4 py-5 sm:p-6">
                   <p className="text-base text-gray-500 dark:text-gray-300">
-                    "As a lifelong learner, I've tried many online platforms, but EduSite stands out with its quality content and user-friendly interface."
+                    &ldquo;As a lifelong learner, I&apos;ve tried many online platforms, but EduSite stands out with its quality content and user-friendly interface.&rdquo;
                   </p>
                   <div className="mt-4">
                     <p className="text-base font-medium text-gray-900 dark:text-white">Akash Sharma</p>

@@ -12,8 +12,9 @@ export default function CourseContent() {
   if (!mounted) return null
 
   return (
-    <div className="bg-gray-50  dark:bg-gray-900 min-h-screen py-20">
-      <div className="max-w-5xl mx-auto px-6">
+    <div className="bg-gray-50  flex justify-center dark:bg-gray-900 min-h-screen py-20">
+      <div className='hidden   lg:block w-1/4 '></div>
+      <div className="max-lg:max-w-2xl mx-auto px-6">
         <header className="mb-8">
           <h1 className="text-4xl font-extrabold text-gray-800 dark:text-gray-100">AI Course Syllabus</h1>
         </header>
@@ -80,6 +81,7 @@ export default function CourseContent() {
           </div>
         </section>
       </div>
+      <div className='hidden  lg:block w-1/4'></div>
     </div>
   )
 }
