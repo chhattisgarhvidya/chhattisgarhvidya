@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import React from 'react';
+
 
 interface SyllabusUnit {
   unit: string;
@@ -57,7 +57,7 @@ const syllabus: SyllabusUnit[] = [
 ];
 
 export default function SyllabusViewer() {
-  const [expandedUnit, setExpandedUnit] = useState<number | null>(null);
+
 
   return (
     <div className="min-h-screen  p-3 md:p-8">
@@ -66,7 +66,7 @@ export default function SyllabusViewer() {
           ERP Course Syllabus
         </h1>
         
-        {syllabus.map((unit, index) => (
+        {syllabus.map((unit) => (
           <div key={unit.unit} className="mb-5 md:mb-8">
             <h2 className="text-2xl font-semibold mb-2 md:mb-6 text-blue-600">
               {unit.unit}

@@ -15,18 +15,19 @@ export default function Home() {
   const pauseDuration = 2000;  // Added explicit pause duration constant
   const isMounted = useRef(false);
 
-  const quotes = [
+  // Move quotes array to useRef to avoid dependency issues
+  const quotesRef = useRef([
     'Empower Your Future Through Learning.',
     'Unlock Knowledge, Unlock Opportunities.',
     'Education is the Passport to the Future.',
     'Learn Anytime, Anywhere with CG Vidya.',
-  ];
+  ]);
 
   useEffect(() => {
     isMounted.current = true;
 
     const handleTyping = () => {
-      const currentFullQuote = quotes[quoteIndex];
+      const currentFullQuote = quotesRef.current[quoteIndex];
 
       if (!isDeleting && charIndex < currentFullQuote.length) {
         // Typing
@@ -42,7 +43,7 @@ export default function Home() {
       } else if (isDeleting && charIndex === 0) {
         // Move to next quote
         setIsDeleting(false);
-        setQuoteIndex((prev) => (prev + 1) % quotes.length);
+        setQuoteIndex((prev) => (prev + 1) % quotesRef.current.length);
       }
     };
 
@@ -53,7 +54,7 @@ export default function Home() {
       clearTimeout(timeoutId);
       isMounted.current = false;
     };
-  }, [charIndex, isDeleting, quoteIndex]);
+  }, [charIndex, isDeleting, quoteIndex, typingSpeed, deletingSpeed, pauseDuration]);
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white">

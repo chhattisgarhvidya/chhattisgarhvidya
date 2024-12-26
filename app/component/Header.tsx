@@ -30,7 +30,7 @@ export function Header(): ReactElement {
 
   const toggleTheme = useCallback(() => {
     setTheme(theme === 'dark' ? 'light' : 'dark');
-  }, [theme]);
+  }, [theme,setTheme]);
   
 
   const toggleMenu = () => {
