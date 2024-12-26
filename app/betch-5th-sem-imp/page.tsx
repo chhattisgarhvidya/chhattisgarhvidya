@@ -1,20 +1,23 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-
+import { IndusInd } from '../component/adds/IndusInd'
+import { useGlobalState } from '@/context/GlobalContext'
+import Image from 'next/image';
+import img1 from '../../public/5semai/5sem img.png'
 
 export default function CourseContent() {
   
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => setMounted(true), [])
-
-  if (!mounted) return null
-
+  const [mounted, setMounted] = useState(false);
+  const { isOpen } = useGlobalState(); // Always call the hook here
+  
+  useEffect(() => setMounted(true), []);
+  
+  if (!mounted) return null;
   return (
-    <div className="bg-gray-50  flex justify-center dark:bg-gray-900 min-h-screen py-20">
+    <div className="bg-gray-50  flex justify-center  dark:bg-gray-900 ">
       <div className='hidden   lg:block w-1/4 '></div>
-      <div className="max-lg:max-w-2xl mx-auto px-6">
+      <div className="max-lg:max-w-2xl mx-auto  p-6">
         <header className="mb-8">
           <h1 className="text-4xl font-extrabold text-gray-800 dark:text-gray-100">AI Course Syllabus</h1>
         </header>
@@ -38,7 +41,7 @@ export default function CourseContent() {
               <li><strong>I.</strong> Explain Hill climbing algorithm with its limitations. </li>
               <li><strong>II.</strong> Explain the concept of constraint satisfaction problems and solve the given problem CROSS + ROADS = DANGER. </li>
               <li><strong>III.</strong> Define the state space for the classical water jug problem with a 3-liter and 4-liter jug. How can we exactly get 2 liters of water in a 4-liter jug? </li>
-              <li><strong>IV.</strong> Prune the search tree using Alpha Beta cutoff and find the game value. </li>
+              <li><strong>IV.</strong> Prune the search tree using Alpha Beta cutoff and find the game value. <Image className='mx-auto' src={img1} alt=''/></li>
             </ul>
           </div>
 
@@ -48,8 +51,26 @@ export default function CourseContent() {
             <ul className="mt-4 space-y-4 text-gray-800 dark:text-gray-200">
               <li><strong>I.</strong> Differentiate between propositional and predicate logic with examples. </li>
               <li><strong>II.</strong> Illustrate the unification algorithm with a simple example involving term and predicate. </li>
-              <li><strong>III.</strong> Describe FOPL (First Order Predicate Logic) in AI and represent statements using FOPL. </li>
-              <li><strong>IV.</strong> Analyze axioms to determine if Marcus is alive now based on given conditions. </li>
+              <li><strong>III.</strong> Describe FOPL (First Order Predicate Logic) in AI and represent statements using FOPL. 
+                    <ul className='pl-3 md:pl-6'>
+                      <li>a. John has at least two friends.</li>
+                      <li>b.	If two people are friends then they are not enemies.                             </li>
+                    </ul>
+              </li>
+              <li><strong>IV.</strong> Analyze axioms to determine if Marcus is alive now based on given conditions. 
+              <ul className='pl-3 md:pl-6'>
+                <li>a.	Marcus was a Man.</li>
+                <li>b.	Marcus was a Pompeian.</li>
+                <li>c.	All men are mortal.</li>
+                <li>d.	Marcus was born in 40 A.D.</li>
+                <li>e.	No mortal lives longer than 150 years.</li>
+                <li>f.	All Pompeians died when the volcano erupted in 79 AD.</li>
+                <li>g.	It is now 2021.</li>
+                <li>h.	Alive means not dead.</li>
+                <li>i.	IF someone dies, then he is dead at all later times.</li>
+                <li>Answer by substitution:   Is Marcus alive now? </li>
+              </ul>
+              </li>
             </ul>
           </div>
 
@@ -81,7 +102,9 @@ export default function CourseContent() {
           </div>
         </section>
       </div>
-      <div className='hidden  lg:block w-1/4'></div>
+      <div className='hidden  lg:block w-1/4 px-2  '></div>
+       <div className={`absolute ${isOpen? ``:`hidden`}`}><IndusInd/></div>
+      
     </div>
   )
 }

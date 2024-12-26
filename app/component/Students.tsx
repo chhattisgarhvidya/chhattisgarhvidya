@@ -42,7 +42,18 @@ const studentResources = [
     Categories:'Betch AIML 6th sem ',
     tags: ['CSVTU', 'BETCH 6th', 'Data Security Lab', 'BETCH AIML'],
     href: '/dslab-6sem',
-  },
+  },{
+    title: 'Betch 7 Sem ERP Imp',
+    description: 'Quick revision guide for Enterprise Resource Planing.',
+    icon: <Book className="h-6 w-6 text-purple-400 dark:text-purple-500" />,
+    level: 'Advanced',
+    students: '150+ students',
+    duration: '3 weeks',
+    rating: 4.9,
+    Categories:'Betch AIML 7th sem ',
+    tags: ['CSVTU', 'BETCH 6th', 'ERP', 'BETCH AIML','Betch AI'],
+    href: '/erp7semimp',
+  }
 ];
 
 export default function Students() {

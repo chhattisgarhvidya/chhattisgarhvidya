@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import { Header } from "./component/Header";
 import Footer from "./component/Footer";
+import { GlobalStateProvider } from "../context/GlobalContext";
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -109,12 +110,14 @@ export default function RootLayout({
      
       </head>
       <body className={`${inter.className}  antialiased`}>
+        <GlobalStateProvider>
         <Providers>
           <Header />
+          <div className="h-16"></div>
           <main >{children}</main>
           <Footer />
         </Providers>
-
+        </GlobalStateProvider>
         {/* Microsoft Clarity Analytics Script */}
         <script
           type="text/javascript"

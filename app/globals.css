@@ -34,7 +34,8 @@ body {
     background-color: transparent;
   }
   50% {
-    background-color: currentColor;
+    background-color: transparent;
+    display: hidden;
   }
 }
 
