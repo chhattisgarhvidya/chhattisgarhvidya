@@ -8,18 +8,6 @@ import Link from 'next/link';
 
 const studentResources = [
   {
-    title: 'Betch 5th Sem Important Questions',
-    description: 'AI Key questions to prepare for your semester exams.',
-    icon: <Book className="h-6 w-6 text-blue-500 dark:text-blue-400" />,
-    level: 'Intermediate',
-    students: '200+ students',
-    duration: '2 weeks prep',
-    rating: 4.5,
-    Categories:'Betch AIML 5th sem ',
-    tags: ['CSVTU', 'BETCH 5th', 'BETCH AI', 'BETCH AIML'],
-    href: '/betch-5th-sem-imp',
-  },
-  {
     title: 'Betch 8th sem AI Lab',
     description: 'Comprehensive notes to ace Python programming.',
     icon: <Book className="h-6 w-6 text-green-500 dark:text-green-400" />,
